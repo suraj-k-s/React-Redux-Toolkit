@@ -1,0 +1,87 @@
+:root {
+    --transition: all 0.2s ease-in-out;
+}
+
+.ProductList {
+    padding-top: 3em;
+    padding-left: 2em;
+    padding-right: 2em;
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 25px;
+    padding-bottom: 2em;
+}
+
+.ProductList .main-container {
+    margin-top: 20px;
+    max-width: 300px;
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+    background: aqua;
+    border-radius: 5px;
+}
+
+.ProductList .main-container::before {
+    content: '';
+    width: 0;
+    height: 0;
+    position: absolute;
+    top: 32%;
+    left: 50%;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 0.4s ease-in-out;
+    background-color: cadetblue;
+}
+
+.ProductList .main-container.active::before,
+.ProductList .main-container:hover::before {
+    width: 250px;
+    height: 250px;
+}
+
+.ProductList .main-container::after {
+    content: '';
+    width: 90px;
+    height: 90px;
+    position: absolute;
+    bottom: -90px;
+    left: -90px;
+    border-radius: 50%;
+    transition: var(--transition);
+    background-color: cadetblue;
+}
+
+.ProductList .main-container.active::after,
+.ProductList .main-container:hover::after {
+    bottom: -35px;
+    left: -35px;
+}
+
+.ProductList .main-container img {
+    width: 280px;
+    height: 210px;
+    margin: 40px 0;
+    position: relative;
+    object-fit: contain;
+    transform: translateY(15px);
+    transition: var(--transition);
+}
+
+.ProductList .main-container h3 {
+    transition: var(--transition);
+}
+
+.ProductList .main-container.active img,
+.ProductList .main-container:hover img {
+    transform: translateY(-20px) scale(0.9);
+}
+
+.ProductList .main-container.active h3,
+.ProductList .main-container:hover h3 {
+    transform: translateY(-20px);
+    color: white;
+}

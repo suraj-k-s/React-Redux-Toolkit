@@ -1,0 +1,24 @@
+header {
+    display: flex;
+    background-color: aqua;
+    grid-template-columns: auto auto;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 2em;
+    padding-right: 2em;
+}
+
+header .cart-count {
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    background: cadetblue;
+    border: none;
+    text-align: center;
+    position: absolute;
+}
+
+header .cart-count h6{
+    top: -16px;
+    position: relative;
+}
